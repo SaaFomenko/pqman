@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.18)
+cmake_minimum_required(VERSION 3.30)
 
 project(pqman
-	VERSION 1.0.0
+	VERSION 1.0.1
 	DESCRIPTION "C++ library with class Pqmqn for work with PostgreSQL."
 	LANGUAGES CXX)
 
@@ -13,18 +13,10 @@ file(GLOB
 set(CMAKE_CXX_STANDARD 17)
 
 # set Postgresql actual version.
-set(PostgreSQL_ADDITIONAL_VERSIONS "15")
-
-# set for Debian 11 postgresql 14.4 source install version.
-# Commited this three sets for Windows.
-set(PostgreSQL_LIBRARY "/usr/local/pgsql/lib/libpq.so.5.14")
-set(PostgreSQL_INCLUDE_DIR "/usr/local/pgsql/include")
-set(PostgreSQL_TYPE_INCLUDE_DIR "/usr/local/pgsql/include/libpq")
-set(add_config_dir "lib/add_config")
-set(add_exception_dir "")
+set(PostgreSQL_ADDITIONAL_VERSIONS "16")
 
 add_subdirectory(
-	"./libpqxx-7.7.5" libpqxx-build
+	"./libpqxx-7.9.2" libpqxx-build
 )
 
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
